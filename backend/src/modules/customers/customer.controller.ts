@@ -30,7 +30,7 @@ export class CustomerController {
 
   static async getById(req: Request, res: Response, next: NextFunction) {
     try {
-      const customer = await service.getById(parseInt(req.params.id));
+      const customer = await service.getById(parseInt(req.params.id as string));
       sendSuccess(res, customer);
     } catch (error) {
       next(error);
@@ -48,7 +48,10 @@ export class CustomerController {
 
   static async update(req: Request, res: Response, next: NextFunction) {
     try {
-      const customer = await service.update(parseInt(req.params.id), req.body);
+      const customer = await service.update(
+        parseInt(req.params.id as string),
+        req.body,
+      );
       sendSuccess(res, customer, "Customer updated successfully");
     } catch (error) {
       next(error);
@@ -57,7 +60,7 @@ export class CustomerController {
 
   static async delete(req: Request, res: Response, next: NextFunction) {
     try {
-      await service.delete(parseInt(req.params.id));
+      await service.delete(parseInt(req.params.id as string));
       sendSuccess(res, null, "Customer deleted successfully");
     } catch (error) {
       next(error);

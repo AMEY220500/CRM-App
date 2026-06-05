@@ -31,7 +31,8 @@ export class AuthService {
     };
 
     const token = jwt.sign(payload, config.jwt.secret, {
-      expiresIn: config.jwt.expiresIn as string,
+      expiresIn: config.jwt
+        .expiresIn as unknown as jwt.SignOptions["expiresIn"],
     });
 
     return {
@@ -70,7 +71,8 @@ export class AuthService {
     };
 
     const token = jwt.sign(payload, config.jwt.secret, {
-      expiresIn: config.jwt.expiresIn as string,
+      expiresIn: config.jwt
+        .expiresIn as unknown as jwt.SignOptions["expiresIn"],
     });
 
     return {

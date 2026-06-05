@@ -34,7 +34,7 @@ export class EmployeeController {
 
   static async getById(req: Request, res: Response, next: NextFunction) {
     try {
-      const employee = await service.getById(parseInt(req.params.id));
+      const employee = await service.getById(parseInt(req.params.id as string));
       sendSuccess(res, employee);
     } catch (error) {
       next(error);
@@ -52,7 +52,10 @@ export class EmployeeController {
 
   static async update(req: Request, res: Response, next: NextFunction) {
     try {
-      const employee = await service.update(parseInt(req.params.id), req.body);
+      const employee = await service.update(
+        parseInt(req.params.id as string),
+        req.body,
+      );
       sendSuccess(res, employee, "Employee updated successfully");
     } catch (error) {
       next(error);
@@ -61,7 +64,7 @@ export class EmployeeController {
 
   static async delete(req: Request, res: Response, next: NextFunction) {
     try {
-      await service.delete(parseInt(req.params.id));
+      await service.delete(parseInt(req.params.id as string));
       sendSuccess(res, null, "Employee deleted successfully");
     } catch (error) {
       next(error);

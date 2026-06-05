@@ -7,9 +7,9 @@
 -- Password: Admin@123 (bcrypt hash)
 -- =============================================
 INSERT INTO users (email, password_hash, first_name, last_name, role, is_active) VALUES
-('admin@crm-app.com', '$2b$12$LQv3c1yqBo9SkvXS7QTJp.EGOgR26cVZnD4.6vDRWpGXp1eXYbKSi', 'System', 'Admin', 'admin', TRUE),
-('manager@crm-app.com', '$2b$12$LQv3c1yqBo9SkvXS7QTJp.EGOgR26cVZnD4.6vDRWpGXp1eXYbKSi', 'John', 'Manager', 'manager', TRUE),
-('employee@crm-app.com', '$2b$12$LQv3c1yqBo9SkvXS7QTJp.EGOgR26cVZnD4.6vDRWpGXp1eXYbKSi', 'Jane', 'Employee', 'employee', TRUE);
+('admin@crm-app.com', '$2b$12$wtm3KXJZo5UXm9WvKlI3nOQsYhf.Rvwk0AsLrPBRFFzkgg7yp58mG', 'System', 'Admin', 'admin', TRUE),
+('manager@crm-app.com', '$2b$12$wtm3KXJZo5UXm9WvKlI3nOQsYhf.Rvwk0AsLrPBRFFzkgg7yp58mG', 'John', 'Manager', 'manager', TRUE),
+('employee@crm-app.com', '$2b$12$wtm3KXJZo5UXm9WvKlI3nOQsYhf.Rvwk0AsLrPBRFFzkgg7yp58mG', 'Jane', 'Employee', 'employee', TRUE);
 
 -- =============================================
 -- DEPARTMENTS

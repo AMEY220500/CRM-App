@@ -44,7 +44,7 @@ export class StockController {
   ) {
     try {
       const movements = await service.getProductMovements(
-        parseInt(req.params.productId),
+        parseInt(req.params.productId as string),
       );
       sendSuccess(res, movements);
     } catch (error) {
