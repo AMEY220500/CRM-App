@@ -34,7 +34,7 @@ MySQL will be available at:
 - **Password**: crm_password
 - **Root Password**: root_password
 
-The schema and seed data will be auto-loaded on first startup from the `migrations/` and `seeds/` directories.
+The schema and seed data will be auto-loaded on first startup (SQL files are mounted directly into `/docker-entrypoint-initdb.d/`).
 
 ### Step 2: Start Backend
 
